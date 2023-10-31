@@ -20,6 +20,11 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+        },
         email: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -48,7 +53,7 @@ User.init(
             },
         },
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'user',
