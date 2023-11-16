@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(46, 32, 20);
+}
+
+body {
+    background-color: rgb(147, 209, 141);
+}
+
+#loginBtn {
+    background-color: aquamarine;
+    border: none;
+    border-radius: 20%;
+    color: rgb(46, 32, 20);
+    font-weight: 700px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    font-size: 24px;
+    width: 200px;
+}
+
+h1 {
+    color: aqua;
+    text-decoration-thickness: 100px;
+
+}
