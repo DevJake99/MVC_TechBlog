@@ -30,13 +30,14 @@ Blog.init(
                 key: 'id',
             },
         },
-        username: {
+        created_by: {
             type: DataTypes.STRING,
             references: {
                 model: 'user',
                 key: 'username'
-            }
+            },
         }
+
     },
     {
         sequelize,

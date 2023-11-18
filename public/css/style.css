@@ -9,6 +9,12 @@ body {
     background-color: rgb(147, 209, 141);
 }
 
+.forms {
+    position: relative;
+    left: 500px;
+    top: 50px;
+}
+
 #loginBtn {
     background-color: aquamarine;
     border: none;

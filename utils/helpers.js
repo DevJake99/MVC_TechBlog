@@ -19,5 +19,8 @@ module.exports = {
             return `<span for="img" aria-label="gear">⚙️</span>`;
         }
     },
+    blog_Preview: (body) => {
+        const preview = body.slice(0, 50);
+        return preview + '...';
+    }
 };
- 

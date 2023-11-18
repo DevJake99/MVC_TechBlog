@@ -9,18 +9,19 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: User,
-                    attributes: ['username'],
+                    attributes: ['name'],
                 },
             ],
         });
 
         // Serialize data so the template can read it
-        const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
+        const blogs = blogData.map((blog) => blog.get({ plain: true }));
         // Pass serialized data and session flag into template
         res.render('homepage', {
             blogs,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            title: 'Tech-Blog - Home Page'
         });
     } catch (err) {
         res.status(500).json(err);
@@ -42,7 +43,8 @@ router.get('/blog/:id', async (req, res) => {
 
         res.render('blog', {
             ...blog,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            title: `${blog.title}`
         });
     } catch (err) {
         res.status(500).json(err);

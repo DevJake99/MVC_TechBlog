@@ -1,19 +1,26 @@
 <h1>Latest Blogs:</h1>
+{{#if blogs}}
+
 {{#each blogs as |blog|}}
-<div class="blogContainer">
-    <div class="blogDiv">
+<div class="homeBlogContainer">
+    <div class="homeBlogDiv">
         <h2>
             <a href="/blog/{{blog.id}}">{{blog.title}}</a>
         </h2>
         <p>
             {{blog.body}}
         </p>
-        <p>Created by {{project.user.name}} on {{format_date project.date_created}}</p>
+        <p>Created by {{blog.username}} on {{format_date blog.date_created}}</p>
     </div>
-    <div class="col-md-7">
+    <div class="homeBlogDescDiv">
         <p>
-            {{project.description}}
+            {{blog_Preview blog.body}}
         </p>
     </div>
 </div>
 {{/each}}
+
+{{else}}
+<h2> No Blogs Yet!</h2>
+<p> Log in to make a post :)</p>
+{{/if}}
