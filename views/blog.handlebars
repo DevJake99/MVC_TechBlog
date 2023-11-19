@@ -1,0 +1,21 @@
+<div class="viewBlog">
+    <div class="homeBlogContainer">
+        <div class="homeBlogDiv">
+            <div class="homeBlogHeader">
+                <h2 class="homeBlogTitle">
+                    {{title}}
+                </h2>
+                <p>Written by {{user.name}} on {{format_date date_created}}</p>
+            </div>
+        </div>
+        <div class="homeBlogDescDiv">
+            <p class="blogPreview">
+                {{body}}
+            </p>
+        </div>
+
+    </div>
+    <p>
+        <button class="btn btn-primary" id="commentBtn">Comment</button>
+    </p>
+</div>

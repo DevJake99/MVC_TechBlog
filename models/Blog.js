@@ -37,7 +37,6 @@ Blog.init(
                 key: 'username'
             },
         },
-        
 
     },
     {

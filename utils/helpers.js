@@ -20,7 +20,7 @@ module.exports = {
         }
     },
     blog_Preview: (body) => {
-        const preview = body.slice(0, 50);
+        const preview = body.slice(0, 75);
         return preview + '...';
     }
 };

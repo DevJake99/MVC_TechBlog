@@ -23,6 +23,7 @@ router.get('/', async (req, res) => {
             logged_in: req.session.logged_in,
             title: 'Tech-Blog - Home Page'
         });
+        //console.log('blogs: ', blogs)
     } catch (err) {
         res.status(500).json(err);
     }
@@ -61,7 +62,7 @@ router.get('/profile', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
-        console.log('/profile: ', user);
+        //console.log('/profile: ', user);
 
 
         res.render('profile', {
@@ -103,11 +104,6 @@ router.get('/publish', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
-    /*if (!req.session.logged_in) {
-        res.redirect('/login')
-    } else {
-        res.render('createPost')
-    } */
-})
+});
 
 module.exports = router;

@@ -6,7 +6,7 @@ header {
 }
 
 body {
-    background-color: rgb(147, 209, 141);
+    background-color: rgb(165, 206, 162);
 }
 
 .forms {
@@ -15,22 +15,10 @@ body {
     top: 50px;
 }
 
-#loginBtn {
-    background-color: aquamarine;
-    border: none;
-    border-radius: 20%;
-    color: rgb(46, 32, 20);
-    font-weight: 700px;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: solid;
-    display: inline-block;
-    font-size: 24px;
-    width: 200px;
-}
+
 
 .h1 {
-    color: aqua;
+    color: #fbeee0;
     font-size: 30px;
     display: inline-block;
     padding: 10px 20px;
@@ -41,31 +29,109 @@ body {
 }
 
 .h1:hover {
-    background-color: aquamarine;
-    color: rgb(46, 32, 20);
+    background-color: #fbeee0;
+    color: #422800;
 
 }
 
+/* CSS */
 .btn {
-    background-color: rgb(46, 32, 20);
-    border: none;
-    border-radius: 5px;
-    color: aquamarine;
-    padding: 10px 20px;
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 24px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .btn:hover {
-    background-color: aquamarine;
-    color: rgb(46, 32, 20);
-    padding: 5px 10px;
+    background-color: #fff;
 }
+
+.btn:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .btn {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+
+
 
 #newBlogArea {
     position: relative;
     left: 500px;
     top: 100px;
+}
+
+.homeBlogContainer {
+    border: 2px solid rgb(46, 32, 20);
+
+}
+
+
+.homeBlogHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;*/
+    position: relative;
+    bottom: 2px;
+    border: 2px solid rgb(46, 32, 20);
+    font-style: none;
+    background-color: rgb(46, 32, 20);
+    color: #fbeee0;
+}
+
+.homeBlogTitle:hover {
+    transform: scale(1.1)
+}
+
+.homeBlogTitle {
+    position: relative;
+    left: 5px;
+    transition: transform 0.3s;
+}
+
+.homeBlogTitle:visited {
+    color: #fbeee0;
+}
+
+.homeBlogTitle:hover {
+    color: #fbeee0;
+}
+
+.homeBlogCred {
+    position: relative;
+    right: 5px;
+}
+
+.blogSpace {
+    margin-bottom: 15px;
+}
+
+.viewBlog {
+    margin-top: 15px;
+}
+
+.blogPreview {
+    position: relative;
+    left: 5px;
 }

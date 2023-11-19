@@ -19,10 +19,20 @@
 {{#if blogs}}
 <h2>My Blogs: </h2>
 {{#each blogs}}
-<div class="myBlogDiv">
-    <h1 class="myBlogTitle ">{{this.title}}</h1>
-    <p class="myBlogBody">{{this.body}}</p>
-</div>
+<section class="blogSpace">
+    <div class="homeBlogContainer">
+        <div class="homeBlogDiv">
+            <div class="homeBlogHeader">
+                <h1 class="homeBlogTitle ">
+                    <a class="homeBlogTitle" href="/blog/{{this.id}}">{{this.title}}</a>
+                </h1>
+            </div>
+        </div>
+        <div>
+            <p class="myBlogBody">{{this.body}}</p>
+        </div>
+    </div>
+</section>
 {{/each}}
 {{else}}
 <h1 class="noBlogs"> No blogs here just yet.. publish a new post to start blogging!</h1>
