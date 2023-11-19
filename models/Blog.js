@@ -36,7 +36,8 @@ Blog.init(
                 model: 'user',
                 key: 'username'
             },
-        }
+        },
+        
 
     },
     {

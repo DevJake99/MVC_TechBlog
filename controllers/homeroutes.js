@@ -61,6 +61,8 @@ router.get('/profile', withAuth, async (req, res) => {
         });
 
         const user = userData.get({ plain: true });
+        console.log('/profile: ', user);
+
 
         res.render('profile', {
             ...user,
@@ -80,5 +82,32 @@ router.get('/login', (req, res) => {
 
     res.render('login');
 });
+
+router.get('/publish', withAuth, async (req, res) => {
+    try {
+        // Find the logged in user based on the session ID
+        const userData = await User.findByPk(req.session.user_id, {
+            attributes: { exclude: ['password'] },
+            include: [{ model: Blog }],
+        });
+
+        const user = userData.get({ plain: true });
+        //console.log(user);
+
+
+        res.render('createPost', {
+            ...user,
+            logged_in: true,
+            title: 'Publish - Tech Blog'
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+    /*if (!req.session.logged_in) {
+        res.redirect('/login')
+    } else {
+        res.render('createPost')
+    } */
+})
 
 module.exports = router;

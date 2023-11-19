@@ -1,0 +1,32 @@
+<header>
+
+    <nav>
+        {{#if logged_in}}
+        <a class="btn" href="/profile">profile</a> |
+        <button class="btn" type="submit " id="logoutBtn">logout</button>
+        <a href="/publish" class="btn" id="createBtn"> Publish a New Post</a>
+        {{else}}
+        <a class="btn" href="/login" id="logInBtn">login</a>
+        {{/if}}
+    </nav>
+
+</header>
+
+
+{{#if logged_in}}
+<h1> Welcome to Your Profile {{username}}!</h1>
+
+{{#if blogs}}
+<h2>My Blogs: </h2>
+{{#each blogs}}
+<div class="myBlogDiv">
+    <h1 class="myBlogTitle ">{{this.title}}</h1>
+    <p class="myBlogBody">{{this.body}}</p>
+</div>
+{{/each}}
+{{else}}
+<h1 class="noBlogs"> No blogs here just yet.. publish a new post to start blogging!</h1>
+{{/if}}
+{{/if}}
+
+<script src="./js/logout.js"></script>

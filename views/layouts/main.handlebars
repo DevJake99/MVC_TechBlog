@@ -10,16 +10,7 @@
 
 <body>
     <header>
-        <h1> Tech-Blog</h1>
-        <nav>
-            {{#if logged_in}}
-            <a href="/profile">profile</a> |
-            <button>logout</button>
-            <button id="createBtn"> Create Post</button>
-            {{else}}
-            <a href="/login" id="loginBtn">login</a>
-            {{/if}}
-        </nav>
+        <a class="h1" href="/"> Tech-Blog</a>
     </header>
     <main>
         {{{body}}}
