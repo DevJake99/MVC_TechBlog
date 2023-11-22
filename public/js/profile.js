@@ -38,32 +38,54 @@ const delButtonHandler = async (event) => {
     }
 };
 
-const commentHandler = async (event) => {
-    event.preventDefault();
-    console.log(' New Comment');
-    const comment_txt = document.querySelector('#commentBody').value.trim();
-    const path = window.location.pathname;
-    const blogId = path.split('/').pop();
+/*function commentForm() {
+    const commentBtn = document.querySelector('#commentBtn');
+    commentBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        document.querySelector('.commentForm').removeAttribute('style');
+        console.log(' New Comment');
+    });
 
-    if (comment) {
-        const response = await fetch(`/api/comments`, {
-            method: 'POST',
-            body: JSON.stringify({ comment_txt, blogId }),
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
 
-        if (response.ok) {
-            document.location.reload();
-        } else {
-            alert('Failed to comment on post');
+    // begin submission handling after submit button is clicked
+    const submitBtn = document.querySelector('#commentSubmit')
+    submitBtn.addEventListener('click', (event) => {
+        event.preventDefault();
+        const commentHandler = async () => {
+            // Store elements in variables once submit is clicked
+            const comment_txt = document.querySelector('.commentTxt').value.trim();
+            const path = window.location.pathname;
+            const blogId = path.split('/').pop();
+
+
+            // Check if text area has a comment
+            if (comment_txt) {
+                const response = await fetch(`/api/comments`, {
+                    method: 'POST',
+                    body: JSON.stringify({ comment_txt, blogId }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    document.location.reload();
+                } else {
+                    alert('Failed to comment on post');
+                }
+            }
         }
-    }
 
-};
+        commentHandler();
+    })
+
+}; */
+
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
+
+
     const publishBtn = document.querySelector('#publishBtn')
     publishBtn.addEventListener('click', newBlogHandler);
 
@@ -71,6 +93,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         .querySelector('.blog-list')
         .addEventListener('click', delButtonHandler);
 
-});
 
+});
 

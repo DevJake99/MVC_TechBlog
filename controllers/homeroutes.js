@@ -46,15 +46,21 @@ router.get('/blog/:id', async (req, res) => {
                     model: User,
                     attributes: ['name'],
                 },
+                {
+                    model: Comment,
+                    attributes: ['body', 'comment_by', 'date_created', 'blog_id'],
+                },
             ],
         });
 
         const blog = blogData.get({ plain: true });
+        console.log('getBlog', blog)
 
         res.render('blog', {
             ...blog,
             logged_in: req.session.logged_in,
-            title: `${blog.title} - Tech Blog`
+            title: `${blog.title} - Tech Blog`,
+            //comments: blog.comments.body
         });
     } catch (err) {
         res.status(500).json(err);

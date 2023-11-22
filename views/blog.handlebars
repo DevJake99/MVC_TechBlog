@@ -1,3 +1,15 @@
+<header>
+    <nav>
+        {{#if logged_in}}
+        <a class="btn" href="/profile">profile</a> |
+        <button class="btn" id="logoutBtn">logout</button>
+        {{else}}
+        <a class="btn" href="/login" id="logInBtn">login</a>
+        {{/if}}
+    </nav>
+</header>
+
+
 <div class="viewBlog">
     <div class="homeBlogContainer">
         <div class="homeBlogDiv">
@@ -13,9 +25,30 @@
                 {{body}}
             </p>
         </div>
-
     </div>
-    <p>
-        <button class="btn btn-primary" id="commentBtn">Comment</button>
-    </p>
+
+    <div class="commentSection">
+        <button class="btn" id="commentBtn">Comment</button>
+        <form style="display: none;" class="commentForm">
+            <textarea class="commentTxt" rows="5" cols="30"></textarea> <br>
+            <button id='commentSubmit' class="btn">Submit</button>
+        </form>
+
+        <!-- Check for blog comments -->
+        {{#if comments}}
+        {{#each comments as |comment|}}
+        <div class="comments">
+            <p>
+                {{comment.body}}
+            </p>
+        </div>
+        {{/each}}
+        {{else}}
+        <div class="comments">
+            <h2 id="noComment">No Comments on This Post Yet..</h2>
+        </div>
+        {{/if}}
+    </div>
 </div>
+
+<script src="/js/comment.js"></script>
