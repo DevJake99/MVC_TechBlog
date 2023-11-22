@@ -38,6 +38,31 @@ const delButtonHandler = async (event) => {
     }
 };
 
+const commentHandler = async (event) => {
+    event.preventDefault();
+    console.log(' New Comment');
+    const comment_txt = document.querySelector('#commentBody').value.trim();
+    const path = window.location.pathname;
+    const blogId = path.split('/').pop();
+
+    if (comment) {
+        const response = await fetch(`/api/comments`, {
+            method: 'POST',
+            body: JSON.stringify({ comment_txt, blogId }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            document.location.reload();
+        } else {
+            alert('Failed to comment on post');
+        }
+    }
+
+};
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const publishBtn = document.querySelector('#publishBtn')
     publishBtn.addEventListener('click', newBlogHandler);

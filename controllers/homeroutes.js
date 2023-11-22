@@ -1,27 +1,36 @@
 const router = require('express').Router();
-const { Blog, User } = require('../models');
+const { Blog, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        // Get all blogs and JOIN with user data
+        // Get all blogs and JOIN with user  and comment data
         const blogData = await Blog.findAll({
             include: [
                 {
                     model: User,
                     attributes: ['name'],
                 },
+                {
+                    model: Comment,
+                    attributes: ['body', 'comment_by', 'date_created'],
+                },
             ],
         });
 
+        console.log('blogData', blogData);
+
+        // const comment_data = await Comment.findAll({})
         // Serialize data so the template can read it
 
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
+        console.log('blogs', blogs);
         // Pass serialized data and session flag into template
         res.render('homepage', {
             blogs,
             logged_in: req.session.logged_in,
-            title: 'Tech-Blog - Home Page'
+            title: 'Tech-Blog - Home Page',
+
         });
         //console.log('blogs: ', blogs)
     } catch (err) {
@@ -45,7 +54,7 @@ router.get('/blog/:id', async (req, res) => {
         res.render('blog', {
             ...blog,
             logged_in: req.session.logged_in,
-            title: `${blog.title}`
+            title: `${blog.title} - Tech Blog`
         });
     } catch (err) {
         res.status(500).json(err);

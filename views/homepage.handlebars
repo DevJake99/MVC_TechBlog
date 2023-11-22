@@ -31,8 +31,25 @@
                 {{blog_Preview blog.body}}
             </p>
         </div>
+        <!--{/if}}-->
+
+
+
     </div>
 </section>
+{{#if blog.comment}}
+{{#each blog.comment as |comment|}}
+<div class="comments">
+    <p>
+        {{comment}}
+    </p>
+</div>
+{{/each}}
+{{else}}
+<div class="comments">
+    <h2 id="noComment">No Comments on This Post Yet..</h2>
+</div>
+{{/if}}
 
 {{/each}}
 

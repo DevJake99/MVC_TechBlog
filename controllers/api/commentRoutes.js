@@ -1,25 +1,27 @@
 const router = require('express').Router();
-const { Blog } = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     console.log(req.body)
     try {
-        const newBlog = await Blog.create({
+        const newComment = await Comment.create({
             ...req.body,
             user_id: req.session.user_id,
-            created_by: req.session.username
+            comment_by: req.session.username,
+            blog_id: blogId,
+            body: comment_txt
         });
-        res.status(200).json(newBlog);
+        res.status(200).json(newComment);
     } catch (err) {
         res.status(400).json(err);
     }
-    console.log('new Blog req.session: ', req.session)
+    console.log('new comment req.session: ', req.session)
 });
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const blogData = await Blog.destroy({
+        const blogData = await Comment.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,
