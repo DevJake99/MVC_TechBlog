@@ -38,48 +38,7 @@ const delButtonHandler = async (event) => {
     }
 };
 
-/*function commentForm() {
-    const commentBtn = document.querySelector('#commentBtn');
-    commentBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        document.querySelector('.commentForm').removeAttribute('style');
-        console.log(' New Comment');
-    });
 
-
-    // begin submission handling after submit button is clicked
-    const submitBtn = document.querySelector('#commentSubmit')
-    submitBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        const commentHandler = async () => {
-            // Store elements in variables once submit is clicked
-            const comment_txt = document.querySelector('.commentTxt').value.trim();
-            const path = window.location.pathname;
-            const blogId = path.split('/').pop();
-
-
-            // Check if text area has a comment
-            if (comment_txt) {
-                const response = await fetch(`/api/comments`, {
-                    method: 'POST',
-                    body: JSON.stringify({ comment_txt, blogId }),
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                if (response.ok) {
-                    document.location.reload();
-                } else {
-                    alert('Failed to comment on post');
-                }
-            }
-        }
-
-        commentHandler();
-    })
-
-}; */
 
 
 
@@ -90,7 +49,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     publishBtn.addEventListener('click', newBlogHandler);
 
     document
-        .querySelector('.blog-list')
+        .querySelector('#deleteBtn')
         .addEventListener('click', delButtonHandler);
 
 

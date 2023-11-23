@@ -37,10 +37,17 @@
         <!-- Check for blog comments -->
         {{#if comments}}
         {{#each comments as |comment|}}
-        <div class="comments">
-            <p>
-                {{comment.body}}
-            </p>
+        <div class="commentContainter">
+            <div class="homeBlogDiv">
+                <div class="homeBlogHeader">
+                    <p>Commented by {{comment.comment_by}} on {{format_date comment.date_created}}</p>
+                </div>
+            </div>
+            <div class="homeBlogDescDiv">
+                <p class="blogPreview">
+                    {{comment.body}}
+                </p>
+            </div>
         </div>
         {{/each}}
         {{else}}

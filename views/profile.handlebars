@@ -2,7 +2,7 @@
 
     <nav>
         {{#if logged_in}}
-        <a class="btn" href="/profile">profile</a> |
+        <!--<a class="btn" href="/profile">profile</a> -->
         <button class="btn" type="submit " id="logoutBtn">logout</button>
         <a href="/publish" class="btn" id="createBtn"> Publish a New Post</a>
         {{else}}
@@ -32,6 +32,7 @@
             <p class="myBlogBody">{{this.body}}</p>
         </div>
     </div>
+    <button data-id="{{this.id}}" id="deleteBtn">Delete Post</button>
 </section>
 {{/each}}
 {{else}}
@@ -40,3 +41,4 @@
 {{/if}}
 
 <script src="./js/logout.js"></script>
+<script src="./js/delete.js"></script>
