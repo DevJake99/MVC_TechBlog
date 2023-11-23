@@ -180,3 +180,60 @@ body {
     position: relative;
     margin-top: 25px;
 }
+
+#newBlogForm {
+    border: 2px solid #422800;
+    border-radius: 4%;
+    width: 30%;
+}
+
+#blogTitle {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#blogBodyLable {
+    position: relative;
+    bottom: 80px;
+}
+
+#newBlogContainer {
+    position: relative;
+    left: 30px;
+}
+
+.labels {
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 20px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+
+}
+
+.newBlogTitle {
+    position: relative;
+    left: 5px;
+}
+
+.newInputs {
+    position: relative;
+    left: 15px;
+    border: 2px solid #422800;
+    border-radius: 20px;
+}
+
+#publishBtn {
+    position: relative;
+    left: 130px;
+}

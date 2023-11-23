@@ -13,17 +13,21 @@
 
 <section id="newBlogArea">
     <form id="newBlogForm" class="new-blog-form">
-        <div class="newBlog">
-            <label for="newTitle">Title: </label>
-            <input type="text" id="blogTitle" name="newTItle" />
-        </div>
-        <div class="newBlog">
-            <label for="newBlogBody">Body: </label>
-            <textarea id="blog-body" name="newBlogBody" rows="10" cols="25"></textarea>
-        </div>
-        <div class="newBlog">
-            <button type="submit" id="publishBtn">Publish Blog</button>
-        </div>
+        <section id="newBlogContainer">
+
+            <div class="newBlogTitle">
+                <label class="labels" for="newTitle">Title: </label>
+                <input class="newInputs" type="text" id="blogTitle" name="newTItle" />
+            </div>
+            <div class="newBlog">
+                <label class="labels" id='blogBodyLable' for="newBlogBody">Body: </label>
+                <textarea class="newInputs" id="blog-body" name="newBlogBody" rows="10" cols="25"></textarea>
+            </div>
+            <div class="newBlog">
+                <button class="btn" type="submit" id="publishBtn">Publish Blog</button>
+            </div>
+
+        </section>
     </form>
 </section>
 
